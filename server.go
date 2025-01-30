@@ -1,6 +1,7 @@
 package main
 
 import (
+	"gqlgen-practice/db"
 	"gqlgen-practice/graph"
 	"log"
 	"net/http"
@@ -17,6 +18,9 @@ import (
 const defaultPort = "8080"
 
 func main() {
+	// データベース初期化
+	db.InitDB()
+	
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = defaultPort
